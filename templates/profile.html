@@ -7,7 +7,18 @@
     <title>hello flask</title>
 </head>
 <body>
-    <!-- basic template jinja -->
-    <h1>ini adalah halaman profile {{ nama_baru }}</h1>
+  <!-- flah meage in flassk -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <!-- basic template jinja -->
+  <h1>ini adalah halaman profile {{ nama_baru }}</h1>
+
+  <br>
+  <a href="{{ url_for('logout') }}">Logout</a>
 </body>
 </html>
